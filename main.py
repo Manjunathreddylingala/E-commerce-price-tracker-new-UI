@@ -63,3 +63,6 @@ st.header("Select your desired price")
 
 level = st.slider("Select the level", 1,int(map[products_found][0].replace(",","")))
 st.write('Selected: {}'.format(level))
+
+
+#for changes check
