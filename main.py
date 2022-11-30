@@ -56,15 +56,12 @@ for block in soup.find_all('div', {'class': '_2kHMtA'}):
 #print(list(map.keys()))
 # print(list(map.values()))
 products_found=st.selectbox("Products Found: ",list(map.keys()))
-st.write("your selected product is:- ",products_found)
-st.write("The Current price of the product is:- ",map[products_found][0])
+if products_found!=None:
+    st.write("your selected product is:- ",products_found)
+    st.write("The Current price of the product is:- ",map[products_found][0])
 
-st.header("Select your desired price")
+    st.header("Select your desired price")
 
-level = st.slider("Select the level", 1,int(map[products_found][0].replace(",","")))
-st.write('Selected: {}'.format(level))
-
-
-#for changes check
-# checking changes
-#temp2 changes
+    level = st.slider("Select the level", 1,int(map[products_found][0].replace(",","")))
+    st.write('Selected: {}'.format(level))
+    
