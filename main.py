@@ -1,11 +1,11 @@
 import streamlit as st
-
+from collections import defaultdict
 from bs4 import BeautifulSoup
 from pyparsing import col
 import requests
 from difflib import get_close_matches
 import webbrowser
-from collections import defaultdict
+
 import random
 #import background_tracker
 
@@ -64,4 +64,11 @@ if products_found!=None:
 
     level = st.slider("Select the level", 1,int(map[products_found][0].replace(",","")))
     st.write('Selected: {}'.format(level))
-    
+
+
+    user_email = st.text_input("Enter the E-mail to send alert", "Type Here ...")
+
+    key2=product_name
+    if(st.button('Submit',key='mailbutton')):
+        result = user_email.title()
+        st.success('Alert will be sent to :- {}'.format(result))
