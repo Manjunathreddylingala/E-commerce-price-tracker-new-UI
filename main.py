@@ -57,18 +57,15 @@ for block in soup.find_all('div', {'class': '_2kHMtA'}):
 # print(list(map.values()))
 products_found=st.selectbox("Products Found: ",list(map.keys()))
 if products_found!=None:
-    st.write("your selected product is:- ",products_found)
-    st.write("The Current price of the product is:- ",map[products_found][0])
+    
+    if(st.button('Submit',key='productname')):
+        st.success(products_found)
+        st.write("your selected product is:- ",products_found)
+        st.write("The Current price of the product is:- ",map[products_found][0])
+        val=12
+        st.write(val)
+        val+=1
 
-    st.header("Select your desired price")
-
-    level = st.slider("Select the level", 1,int(map[products_found][0].replace(",","")))
-    st.write('Selected: {}'.format(level))
-
-
-    user_email = st.text_input("Enter the E-mail to send alert", "Type Here ...")
-
-    key2=product_name
-    if(st.button('Submit',key='mailbutton')):
-        result = user_email.title()
-        st.success('Alert will be sent to :- {}'.format(result))
+        # codeofexit=int(input())
+        # if(codeofexit==1):
+        #     pass
